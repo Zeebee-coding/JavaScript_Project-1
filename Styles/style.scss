@@ -1,0 +1,21 @@
+$primaryColor: #1d3557;
+$lightColor: #f1faee;
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $lightColor;
+    header{
+        nav.navbar{
+            background-color: $primaryColor !important;
+        }
+    }
+    main{
+        flex: 1 0 auto;
+    }
+    footer{
+        background-color: $primaryColor;
+    }
+}   

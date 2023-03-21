@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./Styles/style.css" />
+    <!--Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- toastr CSS file -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+    />
+  </head>
+  <body>
+    <section class="vh-100 gradient-custom login">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card text-white" style="border-radius: 1rem">
+              <div class="card-body p-5 text-center">
+                <div class="mb-md-5 mt-md-4 inputs">
+                  <p class="fw-bold mb-2 text-uppercase">ADMIN LOGIN</p>
+                  <form id="login-form">
+                    <div class="form-outline text-white mb-4">
+                      <input
+                        placeholder="Your Name"
+                        type="text"
+                        id="fullName"
+                        class="form-control form-control-lg"
+                      />
+                    </div>
+                    <div class="form-outline mb-4">
+                      <input
+                        placeholder="Username"
+                        type="email"
+                        id="email"
+                        class="form-control form-control-lg"
+                      />
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input
+                        placeholder="Password"
+                        type="password"
+                        id="password"
+                        class="form-control form-control-lg"
+                      />
+                    </div>
+
+                    <p class="small mb-5 pb-lg-2">
+                      <a class="text-white-50" href="#!">Forgot password?</a>
+                    </p>
+
+                    <button
+                      class="btn btn-outline-light btn-lg px-5"
+                      type="submit"
+                      onclick="login(event)"
+                    >
+                      Login
+                    </button>
+                  </form>
+
+                  <div
+                    class="d-flex justify-content-center text-center mt-4 pt-1"
+                  >
+                    <a href="#!" class="text-white"
+                      ><i class="fab fa-facebook-f fa-lg"></i
+                    ></a>
+                    <a href="#!" class="text-white"
+                      ><i class="fab fa-twitter fa-lg mx-4 px-2"></i
+                    ></a>
+                    <a href="#!" class="text-white"
+                      ><i class="fab fa-google fa-lg"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!--- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <!-- toastr JS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="/JS/script.js"></script>
+  </body>
+</html>
