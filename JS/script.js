@@ -1,13 +1,47 @@
+function message() {
+  alert("Email = admin@user.com");
+  alert("Password = 123456");
+}
+function showToast(
+  message,
+  duration = 3000,
+  position = "top-right",
+  backgroundColor = "#333333"
+) {
+  Toastify({
+    text: message,
+    duration: duration,
+    position: position,
+    backgroundColor: backgroundColor,
+  }).showToast();
+}
+function success() {
+  showToast(
+    "Login Successful!",
+    2000,
+    "right",
+    "linear-gradient(to right, #00b09b, #96c93d)"
+  );
+}
+function fail() {
+  showToast(
+    "Wrong Email or Password!",
+    2000,
+    "center",
+    "linear-gradient(to right, #f11523, #7a0b23 )"
+  );
+}
 function login(event) {
   event.preventDefault();
+  var fullName = $("#fullName").val();
+  var email = $("#email").val();
+  var password = $("#password").val();
 
-  const fullName = $("#fullName").val();
-  const email = $("#email").val();
-  const password = $("#password").val();
-
-  if (email === "admin@user.com" && password === "123456") {
+  if (fullName.length < 3) {
+    toastr.error("Type your name correctly!");
+  } else if (email === "admin@user.com" && password === "123456") {
     const fullNameParam = encodeURIComponent(fullName); // encode fullName parameter for passing in URL
-    window.location.href = `index.html?fullName=${fullNameParam}`; // pass fullName as URL parameter
+    window.location.href = `home/home.html?fullName=${fullNameParam}`; // pass fullName as URL parameter
     toastr.success("Welcome, " + fullName + "!");
   } else {
     toastr.error("Invalid email or password.");
@@ -52,45 +86,31 @@ function addCity() {
   for (i = 0; i < cities.length; i++) {
     if (cities[i] === CityWordInCapitalize) {
       cityFound = true;
-      Toastify({
-        text:
-          "Your city " +
+      showToast(
+        "Your city " +
           '"' +
           CityWordInCapitalize +
           '"' +
           " is already available in list",
-        duration: 3000,
-        // destination: "https://github.com/apvarun/toastify-js",
-        // newWindow: true,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-          background: "linear-gradient(to right, red, blue)",
-        },
-        // onClick: function () {}, // Callback after click
-      }).showToast();
+        2000,
+        "right",
+        "linear-gradient(to right, #f11523, #7a0b23 )"
+      );
       return;
     }
   }
   if (cityFound === false) {
     cities.push(CityWordInCapitalize);
-    Toastify({
-      text:
-        '"' +
+
+    showToast(
+      '"' +
         CityWordInCapitalize +
         '"' +
         " has been successfully added into the list",
-      duration: 3000,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, red, blue)",
-      },
-    }).showToast();
+      2000,
+      "right",
+      "linear-gradient(to right, red, blue)"
+    );
     for (i = 0; i < cities.length; i++) {
       num = i + 1;
       document.getElementById("output").innerHTML +=
